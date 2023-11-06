@@ -7,7 +7,46 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="container" id="content">
+        <div class="card circle">
+            <button type="button" data-model="open-btn">&plus;</button>
+        </div>
+    </div>
+
+    <button type="button" class="btn" data-model="open-btn">Add Book</button>
+
+    <dialog>
+        <button type="button" class="btn" data-model="close-btn" title="esc">&times;</button> 
+        <form method="dialog" id="addBook-form" autocomplete="off">
+                <label for="title">
+                    Name:
+                    <input type="text" id="title" value=""
+                    placeholder="e.g. The Hobbit" autofocus>
+                </label>
+                <label for="author">
+                    Author:
+                    <input type="text" id="author" value=""
+                    placeholder="e.g. J.R.R. Tolkien">
+                </label>
+                <label for="pages">
+                    Pages:
+                    <input type="number" id="pages" value=""
+                    placeholder="e.g. 295" min="1" step="10">
+                </label>
+                <label for="status">
+                    Status:
+                    <select id="status">
+                        <option value="Completed">Completed</option>
+                        <option value="Reading">Reading</option>
+                        <option value="Not Read">Not Read</option>
+                        <option value="Plan To Read" selected>Plan to Read</option>
+                    </select>
+                </label>
+                <output data-model="warn">Please Fill Out Every Field.</output>
+                <button type="button" class="btn" data-model="upload-btn">Upload</button>
+        </form>
+    </dialog>
+
     <script src="./script.js"></script>
 </body>
 </html>
